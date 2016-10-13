@@ -9,16 +9,16 @@ from model.group import Group
 def app(request):
     fixture = Application()
     request.addfinalizer(fixture.destroy)  # request = parameter with method addfinalizer
-    return fixture 
+    return fixture
 
 
 def test_add_group(app):
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     app.create_group(Group(name="g3", header="g3", footer="g33"))
-    app.logout()
+    app.session.logout()
 
 
 def test_add_empty_group(app):
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     app.create_group(Group(name="", header="", footer=""))
-    app.logout()
+    app.session.logout()
