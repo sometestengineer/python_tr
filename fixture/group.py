@@ -5,9 +5,11 @@ class GroupHelper:
 
     def open_group_page(self):
         wd = self.app.wd
+
         # open group page
         wd.find_element_by_link_text("groups").click()
 
+    # create group
     def create(self, group):
         wd = self.app.wd
         self.open_group_page()
@@ -58,3 +60,12 @@ class GroupHelper:
         wd = self.app.wd
         # return to group page
         wd.find_element_by_link_text("group page").click()
+
+    def count(self):  # return false if element not on the page,
+                        # return None if it on the page
+        wd = self.app.wd
+        self.open_group_page()
+        try:
+            wd.find_element_by_name("selected[]")
+        except:
+            return False
