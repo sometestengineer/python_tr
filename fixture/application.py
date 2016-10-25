@@ -1,4 +1,6 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
+
+from fixture.contact import ContactHelper
 from fixture.session import SessionHelper
 from fixture.group import GroupHelper
 
@@ -10,6 +12,7 @@ class Application:
         # self.wd.implicitly_wait(5) needed when page loads dynamically, when element appear on page later
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
+        self.contact = ContactHelper(self)
 
     def is_valid(self):
         try:
