@@ -30,10 +30,9 @@ class ContactHelper:
                 firstname = cells[1].text
                 lastname = cells[2].text
                 id = cells[0].find_element_by_tag_name('input').get_attribute('value')
-                all_phones = cells[5].text.splitlines()  # take text from cell and then split it
+                all_phones = cells[5].text  # take text from cell (6th list element)
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id,
-                                                  homephone=all_phones[0], workphone=all_phones[2],
-                                                  mobilephone=all_phones[1], secondaryphone=all_phones[3]))
+                                                  all_phones_from_home_page=all_phones))
         return list(self.contact_cache)
 
     # open contact modification form

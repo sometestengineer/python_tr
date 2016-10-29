@@ -9,7 +9,7 @@ class Group:
         self.id = id
 
     def __repr__(self):  # representation of elements in console
-        return '%s:%s' % (self.id, self.name)
+        return '%s:%s;%s;%s' % (self.id, self.name, self.header, self.footer)
 
     def __eq__(self, other):  # equals, compare lists by parameters, not by object in memory
         return (self.id is None or other.id is None or self.id == other.id) and self.name == other.name
