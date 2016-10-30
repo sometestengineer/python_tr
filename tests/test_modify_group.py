@@ -6,6 +6,7 @@ def test_modify_group_name(app):
     if app.group.count() == 0:  # precondition
         app.group.create(Group(name="g3"))
     old_groups = app.group.get_group_list()
+    # chooses random group, if there is no it crashes
     index = randrange(len(old_groups))  # index = number of group on group page
     print 'index %s' % index
     group = Group(name='New group')

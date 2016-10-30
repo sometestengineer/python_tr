@@ -7,6 +7,7 @@ def test_delete_some_group(app):
     if app.group.count() == 0:  # if not app.group.count(): = if not app.group.count() == False
         app.group.create(Group(name="g3"))
     old_groups = app.group.get_group_list()
+    # chooses random group, if there is no it crashes
     index = randrange(len(old_groups))
     print 'index %s' % index
     app.group.delete_group_by_index(index)  # delete group passing group number
