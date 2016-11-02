@@ -53,6 +53,11 @@ def stop(request):
     return fixture
 
 
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption('--check_ui')
+
+
 # parameters to run tests
 # py.test --browser=chrome test_... to run test in different browser from CLI
 # or Edit Configurations > Options > --browser=chrome
@@ -61,7 +66,7 @@ def stop(request):
 def pytest_addoption(parser):  # pytest method to hook options
     parser.addoption('--browser', action='store', default='firefox')
     parser.addoption('--target', action='store', default='target.json')
-
+    parser.addoption('--check_ui', action='store_true')
 
 # module to load testdata from data package
 def pytest_generate_tests(metafunc):
