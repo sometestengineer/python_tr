@@ -19,7 +19,7 @@ class ORMFixture:
         header = Optional(str, column='group_header')
         footer = Optional(str, column='group_footer')
         # describing links to db tables through table, linked to column, link with what,
-        # lazy = info extracted (retrieved) only when we access it
+        # lazy = data extracted (retrieved) only when we access it
         contacts = Set(lambda: ORMFixture.ORMContact, table='address_in_groups', column='id', reverse='groups', lazy=True)
 
     class ORMContact(db.Entity):
