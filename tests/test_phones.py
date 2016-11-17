@@ -23,7 +23,7 @@ def clear(s):
 
 
 def merge_phones_like_on_home_page(contact):
-    # for x is not none, clear unwanted symbols, filter empty strings and what's left join with \n (perevoda stroki)
+    # for x is not none, clear unwanted symbols, filter empty strings and what's left join with \n
     return '\n'.join(filter(lambda x: x != '',
                             map(lambda x: clear(x),
                                 filter(lambda x: x is not None,

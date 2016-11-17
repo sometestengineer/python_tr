@@ -94,4 +94,4 @@ def load_from_json(file):
 # interact with test system
 
 # fixture when working with db = connection with db,
-# we establish it and it's ready fo querying
+# we establish it and it's ready for querying

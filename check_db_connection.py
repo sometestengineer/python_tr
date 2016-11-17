@@ -21,7 +21,7 @@ finally:
 #     l = db.get_contact_list()
 #     for item in l:
 #         print item
-#     print len(l)
+#     print  len(l)
 # finally:
 #     # orm automatically closes connection
 #     pass  # db.destroy()
