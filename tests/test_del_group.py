@@ -28,6 +28,6 @@ def test_delete_some_group(app, db, check_ui):
 #     print 'index %s' % index
 #     app.group.delete_group_by_index(index)  # delete group passing group number
 #     new_groups = app.group.get_group_list()
-#     assert len(old_groups) - 1 == len(new_groups)  # will catch error if group list is empty, with clearer diagnostics
+#     assert len(old_groups) - 1 == len(new_groups)
 #     old_groups[index:index+1] = []  # del index element in list, [0:1] = first element
 #     assert old_groups == new_groups

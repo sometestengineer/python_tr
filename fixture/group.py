@@ -77,7 +77,6 @@ class GroupHelper:
         self.select_group_by_index(index)
         # open modification form
         wd.find_element_by_name("edit").click()
-        # fill group form
         self.fill_group_form(new_group_data)
         # submit modification
         wd.find_element_by_name("update").click()
@@ -86,17 +85,10 @@ class GroupHelper:
 
     def return_to_group_page(self):
         wd = self.app.wd
-        # return to group page
         wd.find_element_by_link_text("group page").click()
 
-    def count(self):  # return false if element not on the page,
-                        # return None if it on the page
+    def count(self):
         wd = self.app.wd
-        # self.open_group_page()
-        # try:
-        #     wd.find_element_by_name("selected[]")
-        # except:
-        #     return False
         return len(wd.find_elements_by_name("selected[]"))
 
     group_cache = None
@@ -110,4 +102,4 @@ class GroupHelper:
                 text = element.text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
                 self.group_cache.append(Group(name=text, id=id))
-        return list(self.group_cache)  # list() for make operations with copy of group_cache
+        return list(self.group_cache)  # list() to make operations with group_cache copy

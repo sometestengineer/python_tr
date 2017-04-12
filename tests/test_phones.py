@@ -1,4 +1,4 @@
-# check if phone info is correct
+# checks if phone info is correct
 import re
 
 

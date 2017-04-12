@@ -1,6 +1,4 @@
-# a = [ x for x in range(20) if x % 3 == 0]
 import re
-
 from model.contact import Contact
 
 

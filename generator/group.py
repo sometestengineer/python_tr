@@ -42,7 +42,7 @@ testdata = [Group(name='', header='', footer='')] + [
 # path to file
 file1 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", file_path)
 
-# file groups.py.json creation with testdata in it
+# file groups.json creation with testdata in it
 with open(file1, 'w') as f:
     jsonpickle.set_encoder_options('json', indent=2)
     f.write(jsonpickle.encode(testdata))
@@ -61,7 +61,7 @@ with open(file1, 'w') as f:
 # ]
 
 
-# 8 groups.py as a result, for every parameter in Group we loop through empty or random value
+# 8 groups as a result, for every parameter in Group we loop through empty or random value
 # '','',''
 # '','',footer
 # '',header,''

@@ -18,7 +18,7 @@ class ORMFixture:
         name = Optional(str, column='group_name')
         header = Optional(str, column='group_header')
         footer = Optional(str, column='group_footer')
-        # describing links to db tables through table, linked to column, link with what,
+        # describing links to db tables through table, linked to column
         # lazy = data extracted (retrieved) only when we access it
         contacts = Set(lambda: ORMFixture.ORMContact, table='address_in_groups', column='id', reverse='groups', lazy=True)
 
@@ -36,7 +36,7 @@ class ORMFixture:
         # conv=decoders from pymysql to transform deprecated fields
         self.db.bind('mysql', host=host, database=name, user=user, password=password, conv=decoders)
         self.db.generate_mapping()
-        # to see sql requests 'pony' make
+        # to see sql requests pony's option
         sql_debug(True)
 
     # method to convert object to our model(package) objects
